@@ -109,14 +109,15 @@ keys_file =
     { "f4_move_down_token_occurrence",    "Down", "Control", "Alt" },
     
     // NOTE(rjf): Alternative Movement Keys
-    { "seek_end_of_line",             "End" },
-    { "f4_home_first_non_whitespace", "Home" },
-    { "page_up",                "PageUp" },
-    { "page_down",              "PageDown" },
-    { "goto_beginning_of_file", "PageUp", "Control" },
-    { "goto_end_of_file",       "PageDown", "Control" },
-    { "mark_and_goto_beginning_of_file", "Home", "Control" },
-    { "mark_and_goto_end_of_file",       "End", "Control" },
+    { "seek_end_of_line",                "End"                 },
+    { "f4_home_first_non_whitespace",    "Home"                },
+    { "page_up",                         "PageUp"              },
+    { "page_down",                       "PageDown"            },
+    { "goto_beginning_of_file",          "PageUp",   "Control" },
+    { "goto_end_of_file",                "PageDown", "Control" },
+    { "mark_and_goto_beginning_of_file", "Home",     "Control" },
+    { "mark_and_goto_end_of_file",       "End",      "Control" },
+    { "select_file_and_copy",            "A",        "Control" },
     
     // NOTE(rjf): Mark
     { "set_mark",                    "D", "Control" },
@@ -133,7 +134,6 @@ keys_file =
     { "list_all_locations_of_identifier", "T", "Control", "Shift" },
     
     // NOTE(rjf): Replace
-    { "replace_in_range",            "A", "Control" },
     { "query_replace",               "Q", "Control" },
     { "query_replace_identifier",    "Q", "Control", "Shift" },
     { "query_replace_selection",     "Q", "Alt" },
