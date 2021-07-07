@@ -61,7 +61,7 @@ indent_width = 4;
 default_tab_width = 4;
 
 // Theme
-default_theme_name = "theme-fleury";
+default_theme_name = "theme-cupcake";
 highlight_line_at_cursor = true;
 
 // Font
@@ -75,7 +75,7 @@ default_font_hinting = true;
 default_font_aa_mode = "8bit";
 
 // User
-user_name = "rjf";
+user_name = "CupcakeFoxxo";
 
 // Keyboard AltGr setting
 lalt_lctrl_is_altgr = false;
