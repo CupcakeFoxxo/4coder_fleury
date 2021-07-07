@@ -39,22 +39,22 @@ keys_global =
     // NOTE(rjf): Project
     { "build_in_build_panel",                     "M",      "Alt"                      },
     { "project_command_lister",                   "X",      "Alt",     "Shift"         },
-    { "project_fkey_command",                     "F1", "Control"                      },
-    { "project_fkey_command",                     "F2", "Control"                      },
-    { "project_fkey_command",                     "F3", "Control"                      },
-    { "project_fkey_command",                     "F4", "Control"                      },
-    { "project_fkey_command",                     "F5", "Control"                      },
-    { "project_fkey_command",                     "F6", "Control"                      },
-    { "project_fkey_command",                     "F7", "Control"                      },
-    { "project_fkey_command",                     "F8", "Control"                      },
-    { "project_fkey_command",                     "F9", "Control"                      },
-    { "project_fkey_command",                     "F10", "Control"                     },
-    { "project_fkey_command",                     "F11", "Control"                     },
-    { "project_fkey_command",                     "F12", "Control"                     },
-    { "project_fkey_command",                     "F13", "Control"                     },
-    { "project_fkey_command",                     "F14", "Control"                     },
-    { "project_fkey_command",                     "F15", "Control"                     },
-    { "project_fkey_command",                     "F16", "Control"                     },
+    { "project_fkey_command",                     "F1"                                 },
+    { "project_fkey_command",                     "F2"                                 },
+    { "project_fkey_command",                     "F3"                                 },
+    { "project_fkey_command",                     "F4"                                 },
+    { "project_fkey_command",                     "F5"                                 },
+    { "project_fkey_command",                     "F6"                                 },
+    { "project_fkey_command",                     "F7"                                 },
+    { "project_fkey_command",                     "F8"                                 },
+    { "project_fkey_command",                     "F9"                                 },
+    { "project_fkey_command",                     "F10"                                },
+    { "project_fkey_command",                     "F11"                                },
+    { "project_fkey_command",                     "F12"                                },
+    { "project_fkey_command",                     "F13"                                },
+    { "project_fkey_command",                     "F14"                                },
+    { "project_fkey_command",                     "F15"                                },
+    { "project_fkey_command",                     "F16"                                },
     
     // NOTE(rjf): Panels
     { "view_current_buffer_in_two_panels", "2", "Control" },
@@ -145,12 +145,6 @@ keys_file =
 	{ "replace_range_with_paste",    "V", "Control", "Alt"   },
     { "cut",                         "X", "Control"          },
     
-    // NOTE(rjf): Lego
-    { "f4_lego_buffer_place",        "F1", },
-    { "f4_lego_buffer_place",        "F2", },
-    { "f4_lego_buffer_place",        "F3", },
-    { "f4_lego_buffer_place",        "F4", },
-    
     // NOTE(rjf): Insertion
     { "duplicate_line",              "L", "Control" },
     { "marker_comment",              "Minus", "Control" },
@@ -213,15 +207,4 @@ keys_code =
     { "if0_off",                    "I", "Alt" },
     { "open_file_in_quotes",        "1", "Alt" },
     { "open_matching_file_cpp",     "2", "Alt" },
-    
-    { "f4_lego_store_range",        "F5", "Alt" },
-    { "f4_lego_store_range",        "F6", "Alt" },
-    { "f4_lego_store_range",        "F7", "Alt" },
-    { "f4_lego_store_range",        "F8", "Alt" },
-    
-    { "f4_lego_store_token",        "F5" },
-    { "f4_lego_store_token",        "F6" },
-    { "f4_lego_store_token",        "F7" },
-    { "f4_lego_store_token",        "F8" },
-    
 };
