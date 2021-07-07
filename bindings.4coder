@@ -139,10 +139,11 @@ keys_file =
     { "query_replace_selection",     "Q", "Alt" },
     
     // NOTE(rjf): Clipboard
-    { "copy",                        "C", "Control" },
-    { "paste_and_indent",            "V", "Control" },
+    { "copy",                        "C", "Control"          },
+    { "paste_and_indent",            "V", "Control"          },
     { "paste_next_and_indent",       "V", "Control", "Shift" },
-    { "cut",                         "X", "Control" },
+	{ "replace_range_with_paste",    "V", "Control", "Alt"   },
+    { "cut",                         "X", "Control"          },
     
     // NOTE(rjf): Lego
     { "f4_lego_buffer_place",        "F1", },
