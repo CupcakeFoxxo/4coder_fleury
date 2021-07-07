@@ -71,7 +71,7 @@ F4_Boundary_DividerComment(Application_Links *app, Buffer_ID buffer,
                            Side side, Scan_Direction direction, i64 pos,
                            String_Const_u8 signifier)
 {
-    return _F4_Boundary_DividerComment(app, buffer, side, direction, pos, strong_divider_comment_signifier);
+    return _F4_Boundary_DividerComment(app, buffer, side, direction, pos, weak_divider_comment_signifier);
 }
 
 CUSTOM_COMMAND_SIG(f4_move_to_next_divider_comment)
