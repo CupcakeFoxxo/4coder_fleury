@@ -42,7 +42,7 @@ lister_roundness = 20;
 // Code Wrapping
 treat_as_code = ".cpp.c.hpp.h.cc.cs.java.rs.glsl.m.mm.ds.md.4coder.jai.vert.frag";
 enable_virtual_whitespace = true;
-virtual_whitespace_regular_indent = 1;
+virtual_whitespace_regular_indent = 2;
 enable_code_wrapping = true;
 
 // This only applies to code files in code-wrapping mode.
@@ -56,7 +56,7 @@ automatically_save_changes_on_build = true;
 automatically_load_project = true;
 
 // Indentation
-indent_with_tabs = false;
+indent_with_tabs = true;
 indent_width = 4;
 default_tab_width = 4;
 
