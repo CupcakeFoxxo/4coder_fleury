@@ -166,19 +166,49 @@ CUSTOM_DOC("Replace the current line with the clipboard.")
 }
 
 //---Panel interaction
+CUSTOM_COMMAND_SIG(switch_panel)
+CUSTOM_DOC("Switches to next panel.")
+{
+	auto active_view_id = get_active_view(app, Access_Always);
+	auto next_view = get_view_next(app, active_view_id, Access_Always);
+	if (next_view != 0) {
+		view_set_active(app, next_view);
+	} else {
+		auto first_view = get_view_next(app, 0, Access_Always);
+		view_set_active(app, first_view);
+	}
+}
+
+CUSTOM_COMMAND_SIG(switch_buffer)
+CUSTOM_DOC("Switches the buffer in the current panel.")
+{
+	auto active_view_id = get_active_view(app, Access_Always);
+	auto active_buffer_id = view_get_buffer(app, active_view_id, Access_Always);
+	auto next_buffer_id = get_buffer_next(app, active_buffer_id, Access_Always);
+	if (next_buffer_id) {
+		view_set_buffer(app, active_view_id, next_buffer_id, 0);
+	} else {
+		auto first_buffer_id = get_buffer_next(app, 0, Access_Always);
+		view_set_buffer(app, active_view_id, first_buffer_id, 0);
+	}
+}
+
 CUSTOM_COMMAND_SIG(close_other_panel)
 CUSTOM_DOC("Closes the inactive panel (fullscreens current panel).")
 {
-	change_active_panel(app);
+	switch_panel(app);
 	close_panel(app);
 }
 
 CUSTOM_COMMAND_SIG(view_current_buffer_in_two_panels)
 CUSTOM_DOC("Ensures that two panels are open both containing the currently active buffer.")
 {
-    auto active_view_id = get_active_view(app, Access_ReadVisible);
-    while (auto next_view_id = get_view_next(app, active_view_id, Access_ReadVisible)) {
-        view_close(app, next_view_id);
+    auto active_view_id = get_active_view(app, Access_Always);
+    while (auto next_view_id = get_view_next(app, active_view_id, Access_Always)) {
+		view_close(app, next_view_id);
+    }
+    while (auto next_view_id = get_view_prev(app, active_view_id, Access_Always)) {
+		view_close(app, next_view_id);
     }
     open_panel_vsplit(app);
 }
