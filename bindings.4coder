@@ -84,7 +84,9 @@ keys_file =
     { "cut_line",                                     "Backspace", "Control", "Shift" },
     { "replace_line",                                 "Backspace", "Control", "Alt"   },
     
-    { "copy_word",                                    "Space", "Alt"                  },
+	// HACK(CupcakeFoxxo): alt + space triggers an annoying windows behavior
+	// so I have autohotkey remap alt + space to F17
+    { "copy_word",                                    "F17",                          },
     { "cut_word",                                     "Space", "Control", "Shift"     },
     { "replace_word",                                 "Space", "Control", "Alt"       },
     
