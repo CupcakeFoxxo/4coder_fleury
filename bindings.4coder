@@ -72,23 +72,23 @@ keys_file =
     //            Alt  => Alphanumeric/Camel
     
     // NOTE(rjf): Backspace/Delete
-    { "delete_char",                                  "Delete"                        },
-    { "f4_delete_alpha_numeric_or_camel_boundary",    "Delete",    "Alt"              },
-    { "delete_alpha_numeric_underscore",              "Delete",    "Control"          },
+    { "delete_char",                                  "Delete"               },
+    { "f4_delete_alpha_numeric_or_camel_boundary",    "Delete",    "Alt"     },
+    { "delete_alpha_numeric_underscore",              "Delete",    "Control" },
     
-    { "backspace_char",                               "Backspace"                     },
-    { "f4_backspace_alpha_numeric_or_camel_boundary", "Backspace", "Alt"              },
-    { "backspace_alpha_numeric_underscore",           "Backspace", "Control"          },
+    { "backspace_char",                               "Backspace"            },
+    { "f4_backspace_alpha_numeric_or_camel_boundary", "Backspace", "Alt"     },
+    { "backspace_alpha_numeric_underscore",           "Backspace", "Control" },
     
-    { "copy_line",                                    "Backspace", "Alt"              },
-    { "cut_line",                                     "Backspace", "Control", "Shift" },
-    { "replace_line",                                 "Backspace", "Control", "Alt"   },
+    { "copy_line",                                    "Backspace", "Shift", "Alt"            },
+    { "cut_line",                                     "Backspace", "Shift", "Control"        },
+    { "replace_line",                                 "Backspace", "Shift", "Control", "Alt" },
     
 	// HACK(CupcakeFoxxo): alt + space triggers an annoying windows behavior
-	// so I have autohotkey remap alt + space to F17
-    { "copy_word",                                    "F17",                          },
-    { "cut_word",                                     "Space", "Control", "Shift"     },
-    { "replace_word",                                 "Space", "Control", "Alt"       },
+	// so I have autohotkey do some remapping
+    { "copy_word",                                    "F17" },
+    { "cut_word",                                     "F18" },
+    { "replace_word",                                 "F19" },
     
     // NOTE(rjf): Left/Right Arrow Keys
     { "f4_move_left",                               "Left"            },

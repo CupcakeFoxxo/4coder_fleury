@@ -1,4 +1,5 @@
 //@todo prototypeify
+//@todo command for finding/replacing clipboard contents
 
 //---Character insertion
 CUSTOM_COMMAND_SIG(marker_comment)
@@ -48,6 +49,35 @@ static void seek_alpha_numeric_underscore(Application_Links* app, Scan_Direction
     view_set_cursor(app, active_view_id, seek_match);
 }
 
+//set the range to the beginning and end of the alpha_numeric_underscore word at the cursor
+//if there is no such word then return false and do not modify the range
+static bool set_range_to_alpha_numeric_underscore_at_cursor(Application_Links* app) {
+	auto active_view_id = get_active_view(app, Access_ReadVisible);
+    auto active_buffer_id = view_get_buffer(app, active_view_id, Access_ReadVisible);
+    auto cursor_position = view_get_cursor_pos(app, active_view_id);
+	
+	auto character_at_cursor = buffer_get_char(app, active_buffer_id, cursor_position);
+	if (character_predicate_check_character(character_predicate_alpha_numeric_underscore_utf8, character_at_cursor)) {
+		seek_alpha_numeric_underscore_right(app);
+		set_mark(app);
+		seek_alpha_numeric_underscore_left(app);
+		cursor_mark_swap(app);
+		return true;
+	}
+	
+	if (cursor_position != 0) {
+		auto character_before_cursor = buffer_get_char(app, active_buffer_id, cursor_position - 1);
+		if (character_predicate_check_character(character_predicate_alpha_numeric_underscore_utf8, character_before_cursor)) {
+			seek_alpha_numeric_underscore_left(app);
+			set_mark(app);
+			seek_alpha_numeric_underscore_right(app);
+			return true;
+		}
+	}
+	
+	return false;
+}
+
 CUSTOM_COMMAND_SIG(seek_alpha_numeric_underscore_left)
 CUSTOM_DOC("Seek the left boundary of the nearest alpha-numeric or underscore word to the left.")
 {
@@ -63,28 +93,25 @@ CUSTOM_DOC("Seek the right boundary of the nearest alpha-numeric or underscore w
 CUSTOM_COMMAND_SIG(cut_word)
 CUSTOM_DOC("Cut the word under the cursor.")
 {
-	seek_alpha_numeric_underscore_left(app);
-	set_mark(app);
-	seek_alpha_numeric_underscore_right(app);
-	cut(app);
+	if (set_range_to_alpha_numeric_underscore_at_cursor(app)) {
+		cut(app);
+	}
 }
 
 CUSTOM_COMMAND_SIG(copy_word)
 CUSTOM_DOC("Copy the word under the cursor.")
 {
-	seek_alpha_numeric_underscore_left(app);
-	set_mark(app);
-	seek_alpha_numeric_underscore_right(app);
-	copy(app);
+	if (set_range_to_alpha_numeric_underscore_at_cursor(app)) {
+		copy(app);
+	}
 }
 
 CUSTOM_COMMAND_SIG(replace_word)
 CUSTOM_DOC("Replaces the word under the cursor.")
 {
-	seek_alpha_numeric_underscore_left(app);
-	set_mark(app);
-	seek_alpha_numeric_underscore_right(app);
-	replace_range_with_paste(app);
+	if (set_range_to_alpha_numeric_underscore_at_cursor(app)) {
+		replace_range_with_paste(app);
+	}
 }
 
 CUSTOM_COMMAND_SIG(backspace_alpha_numeric_underscore)
