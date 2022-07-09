@@ -1,5 +1,8 @@
 //@todo prototypeify
 //@todo command for finding/replacing clipboard contents
+//@todo keyword highlighting for foxlib types
+//@todo keyword highlighting for auto
+//@todo semantic rename
 
 //---Character insertion
 CUSTOM_COMMAND_SIG(marker_comment)
